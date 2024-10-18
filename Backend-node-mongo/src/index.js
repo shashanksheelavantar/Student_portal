@@ -1,12 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config({ path: './.env.sample' }); 
-import connectDB from './db/db.js';
-import express, { json } from 'express';
-const app = express();
-app.use(json());
-const PORT = process.env.PORT || 8000;
+import {db} from './db/db.js';
+import {app} from "./app.js"
 
-// connectDB();
+
+
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
     console.log(`The server started on port ${PORT}`);
